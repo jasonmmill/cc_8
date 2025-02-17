@@ -13,3 +13,18 @@ function calculateDiscount(price, discountRate) {
 
 console.log(calculateDiscount(100, 0.2))
 console.log(calculateDiscount(250, 0.15))
+
+// Task 3: Arrow Function
+let calculateServiceFee = (amount, serviceType) => {
+    if (serviceType === "Premium") {
+        return `Service Fee: $${(amount * 0.15).toFixed(2)}`
+    }
+    if (serviceType === "Standard") {
+    return `Service Fee: $${(amount * 0.10).toFixed(2)}`
+    }
+    if (serviceType === "Basic") {
+    return `Service Fee: $${(amount * 0.05).toFixed(2)}`
+}
+}
+console.log(calculateServiceFee(200, "Premium"))
+console.log(calculateServiceFee(500, "Standard"))
