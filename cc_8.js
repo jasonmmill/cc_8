@@ -68,3 +68,15 @@ function filterLargeTransactions(transactions, filterFunction) { // higher order
     return transactions.filter(transaction => filterFunction(transaction)) // uses parameters to filter based on filterFunction
 }
 console.log(filterLargeTransactions(transactions, amount => amount > 1000)) // log results 
+
+// Task 7: Closures
+function createCartTracker() { // create function with no parameters
+    let total = 0 // establish initial running total as 0
+    return function(amount) { // call another function with a new parameter "amount"
+        return `Current Balance: $${(total += amount).toFixed(2)}` // formula to add to running cart total
+    }
+}
+let cart = createCartTracker() // output based on assignment
+
+console.log(cart(20)) // log results for different outcomes 
+console.log(cart(35))
